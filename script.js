@@ -1,4 +1,4 @@
-const countDownDate = new Date("Nov 05, 2025 00:00:00").getTime();
+const countDownDate = new Date("Nov 05, 2026 00:00:00").getTime();
 const disDays = document.querySelector("#days p");
 const disHours = document.querySelector("#hours p");
 const disMinutes = document.querySelector("#minutes p");
@@ -15,11 +15,11 @@ var x = setInterval(function () {
   disHours.textContent = hours;
   disMinutes.textContent = minutes;
   disSeconds.textContent = seconds;
-  if (distance < 0) {
-    clearInterval();
+  if (distance <= 0) {
+    clearInterval(x);
     disDays.textContent = "00";
-    disHours.textContent =  "00";
+    disHours.textContent = "00";
     disMinutes.textContent = "00";
-    disSeconds.textContent =  "00";
+    disSeconds.textContent = "00";
   }
 }, 1000);
